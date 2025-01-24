@@ -40,3 +40,16 @@ Instalacion:
                 }
         }
 Esta clase la realizamos para crear objetos que representan los libros. Cada libro tiene las propiedades de los requerimientos el id el titulo el autor el genero el estado y adicional una fecha=null donde vemos si el libro fue reservado o prestado
+
+2) Metodo reservar
+ reservar(date){
+                if(this.estado === 'disponible'){
+                    this.estado = 'prestado';
+                    this.fecha = date;
+                    return true;
+                }
+                return false;
+            };
+Esto nos ayuda a cambiar el estado del libro a prestado y registrar la fecha de reserva si el estado es disponible.
+El parameto es date -> la fecha de reserva 
+que nos devolvera true si se realizo con exito o falso si el libro ya fue presatado
