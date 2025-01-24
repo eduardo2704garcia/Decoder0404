@@ -37,6 +37,22 @@
             }
         }
         
+        class inventario {
+            libros = [];
+        
+            AgregaLibro(id, titulo, autor,genero, estado) {
+                this.libros.push(new libro(id, titulo, autor, genero, estado));//Guarda en arreglo productos, con los atributos 
+            }
+        
+            buscarLibro(termino) {
+                return this.libros.filter(function(libro) {
+                    return libro.titulo.includes(termino) ||
+                           libro.autor.includes(termino) ||
+                           libro.genero.includes(termino);
+                });
+            }
+
+        }
     </script>
 </body>
 </html>
