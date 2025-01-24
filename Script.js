@@ -30,7 +30,8 @@ class libro {
 
 class inventario {
     libros = [];
-
+ 
+    
     AgregaLibro(id, titulo, autor,genero, estado) {
         this.libros.push(new libro(id, titulo, autor, genero, estado));//Guarda en arreglo productos, con los atributos 
     }
