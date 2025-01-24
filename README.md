@@ -53,3 +53,14 @@ Esta clase la realizamos para crear objetos que representan los libros. Cada lib
 Esto nos ayuda a cambiar el estado del libro a prestado y registrar la fecha de reserva si el estado es disponible.
 El parameto es date -> la fecha de reserva 
 que nos devolvera true si se realizo con exito o falso si el libro ya fue presatado
+
+3) metodo devolver
+devolver() {
+                if (this.estado === 'prestado') {
+                    this.estado = 'disponible';
+                    this.fechaPrestamo = null;
+                    return true;
+                }
+                return false;
+            }
+esto nos permitira devolver el libro si su estado es prestado o sino cambiar el estado a disponible actualizando la fecha de prestamo, no implementamos parametros en este metodo y nos devolvera verdadero si se devolvio con exito o falso si el libro no estaba prestado
