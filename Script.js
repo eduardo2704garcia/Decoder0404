@@ -31,7 +31,7 @@ class libro {
 class inventario {
     libros = [];
  
-    
+
     AgregaLibro(id, titulo, autor,genero, estado) {
         this.libros.push(new libro(id, titulo, autor, genero, estado));//Guarda en arreglo productos, con los atributos 
     }
@@ -141,3 +141,18 @@ class Libraria {
         }
     }
 }
+
+const sistemaInventario = new inventario();
+
+sistemaInventario.AgregaLibro(1, 'El Principito', 'Antoine de Saint-Exupéry', 'Ficción', 'disponible');
+sistemaInventario.AgregaLibro(2, 'Cien Años de Soledad', 'Gabriel García Márquez', 'Realismo Mágico', 'prestado');
+sistemaInventario.AgregaLibro(3, '1984', 'George Orwell', 'Distopía', 'disponible');
+sistemaInventario.AgregaLibro(4, 'Don Quijote de la Mancha', 'Miguel de Cervantes', 'Clásico', 'disponible');
+sistemaInventario.AgregaLibro(5, 'Orgullo y Prejuicio', 'Jane Austen', 'Romance', 'prestado');
+sistemaInventario.AgregaLibro(6, 'El Hobbit', 'J.R.R. Tolkien', 'Fantasía', 'disponible');
+sistemaInventario.AgregaLibro(7, 'Crimen y Castigo', 'Fiódor Dostoyevski', 'Drama', 'disponible');
+sistemaInventario.AgregaLibro(8, 'Fahrenheit 451', 'Ray Bradbury', 'Ciencia Ficción', 'prestado');
+sistemaInventario.AgregaLibro(9, 'La Odisea', 'Homero', 'Clásico', 'disponible');
+sistemaInventario.AgregaLibro(10, 'Matar a un Ruiseñor', 'Harper Lee', 'Ficción', 'disponible');
+
+const biblioteca = new Libraria(sistemaInventario);
