@@ -93,3 +93,41 @@ crea una instancia libro y lo agrega al arreglo
 busca los libros que tengan el titulo el autor o el genero con el mismo termino usando filter para dar el arreglo con los resultados
 * filtrarPorEstado
 este metodo filtra los libros segun el estdo ya sea disponible o prestados, sino tenemos un estado nos devolvera todos los libros
+
+5) Clase Libraria
+class Libraria {
+    constructor(libraria) {
+        // Guardar el sistema de librería
+        this.sistemaLibreria = libraria;
+        
+        // Poner todo listo al inicio
+        this.configurarEventos();
+        this.mostrarLibros();
+    }
+}   
+
+Esta clase nos ayuda a la interaccion entre la interfaz del usuario y el sistema, tiene un constructor que tiene un parametro que es libraria que se inicia en la clase inventario esto alamacena su referencia configura los eventos iniciales y me muestra los libros que existen en la tabla
+
+* metodo configurarEventos()
+utilizamos el cajaBusqueda.onkeyup:
+que detecta cuando el usuario escribe en el campo de busqueda, nos filtra los libros y muestra esos libros en la tabla
+select.onchange: ayuda a detectar la seleccion de un estrado y filtra y muestra esos libros
+
+* mostrarLibros
+muestra los libros del inventario y limpia la tabla antes de rellenarla con los libros
+
+*mostrarNotificacion(mensaje)
+esto nos muestra un mensaje temporal en la pagina que desaparece despues de 3seg
+
+* reservaLibro(id)
+busca el libro por el id si no lo encuentra y esta disponible lo reserva 
+
+Introduccion al dom
+UTILIZAMOS ELEMENTOS COMO
+#searchInput: Campo de búsqueda para filtrar libros.
+#filterState: Selector para filtrar por estado.
+#booksBody: Cuerpo de la tabla donde se listan los libros.
+#notifications: Elemento donde se muestran las notificaciones.
+EVENTOS DOM:
+onkeyup: Detecta cambios en el campo de búsqueda.
+onchange: Detecta cambios en el selector de estado.
