@@ -64,3 +64,32 @@ devolver() {
                 return false;
             }
 esto nos permitira devolver el libro si su estado es prestado o sino cambiar el estado a disponible actualizando la fecha de prestamo, no implementamos parametros en este metodo y nos devolvera verdadero si se devolvio con exito o falso si el libro no estaba prestado
+
+4) clase inventario
+class inventario {
+    libros = [];
+
+    AgregaLibro(id, titulo, autor,genero, estado) {
+        this.libros.push(new libro(id, titulo, autor, genero, estado));//Guarda en arreglo productos, con los atributos 
+    }
+
+    buscarLibro(termino) {//busca, titulo, autor, genero
+        return this.libros.filter(function(libro) {
+            return libro.titulo.includes(termino) ||
+                   libro.autor.includes(termino) ||
+                   libro.genero.includes(termino);
+        });
+    }
+
+    filtrarPorEstado(estado) {
+        return estado ? this.libros.filter(libro => libro.estado === estado) : this.libros;
+    }
+}
+
+Esta clase maneja la coleccion de los libros tiene un arreglo que almacena los libros en la clase libro
+* metodo agregar libro
+crea una instancia libro y lo agrega al arreglo 
+* metodo buscarlibro
+busca los libros que tengan el titulo el autor o el genero con el mismo termino usando filter para dar el arreglo con los resultados
+* filtrarPorEstado
+este metodo filtra los libros segun el estdo ya sea disponible o prestados, sino tenemos un estado nos devolvera todos los libros
