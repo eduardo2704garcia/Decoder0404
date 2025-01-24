@@ -8,11 +8,11 @@
 </head>
 <body>
     <h1>Gestión de Libros</h1>
-    <div id="aviso" class="aviso"></div>
+    <div id="notifications" class="aviso"></div>
 
     <div>
-        <input type="text" id="buscar" placeholder="Busca libro por título, autor o género">
-        <select  id="estado">
+        <input type="text" id="searchInput" placeholder="Busca libro por título, autor o género">
+        <select  id="filterState">
             <option value="">Todos</option>
             <option value="disponible">Disponibles</option>
             <option value="prestado">Prestados</option>
@@ -31,6 +31,9 @@
                 <th>Acción</th>
             </tr>
         </thead>
+        <tbody id="booksBody">
+            <!-- Aquí se generarán dinámicamente los libros -->
+        </tbody>
     </table>
 
     <script src="Script.js"></script>
